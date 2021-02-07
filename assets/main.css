@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Megrim|Space+Mono|Hind|Yanone+Kaffeesatz);
 /* https://coolors.co/fbfbff-020300-24397f-6666a3-0fa3b1 */
 /* https://coolors.co/fbfbff-e7e9f6-020300-00005e-972164-6666a3-0fa3b1 */
 
@@ -22,29 +22,40 @@ body {
 
 h1 {
 	text-align: center;
+	font-family: 'Megrim', sans-serif;
 	text-transform: uppercase;
-	font-family: 'Open Sans', sans-serif;
+	font-size: 54px;
 	color: white;
-	margin: 0;
+	margin: auto;
 }
 
 h2 {
 	text-align: center;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	font-size: 32px;
 	color: white;
+	margin: auto;
 }
 
 p {
 	text-align: left;
-        font-family: 'Open Sans', sans-serif;
+        font-family: 'Hind', sans-serif;
         color: black;
 	margin: 0;
 }
 
 p.white-text {
 	text-align: center;
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Hind', sans-serif;
 	color: white;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+a:hover {
+	color: var(--gry);
 }
 
 
@@ -58,6 +69,7 @@ section.page-section {
 }
 
 #intro {
+	display: flex;
 	background-color: var(--drkblue);
 }
 
@@ -84,6 +96,7 @@ div.leftside {
 	height: 100%;
 	position: absolute;
 	left: 0px;
+	display: flex;
 }
 
 div.rightside {
@@ -126,6 +139,7 @@ div.researchinterest {
 	transition: 0.4s;
 	background-size: 100%;
 	background-position: center;
+	display: flex;
 }
 div.researchinterest:hover {
 	filter: brightness(100%);
