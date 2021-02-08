@@ -27,6 +27,7 @@ h1 {
 	font-size: 54px;
 	color: white;
 	margin: auto;
+	padding: 12px;
 }
 
 h2 {
@@ -135,11 +136,11 @@ div.rightside {
 /* Research interests divs */
 div.researchinterest {
 	height: 33.3333334%;
-	filter: brightness(50%);
-	transition: 0.4s;
 	background-size: 100%;
 	background-position: center;
 	display: flex;
+	filter: brightness(50%);
+        transition: 0.4s;
 }
 div.researchinterest:hover {
 	filter: brightness(100%);
@@ -150,10 +151,10 @@ div.researchinterest:hover {
 	background-image: url('images/aia335.jpeg');
 }
 #ri-binary {
-	background-color: white;
+	background-image: url('images/binary.jpg');
 }
 #ri-galaxy {
-	background-image: url('images/tsne.png');
+	background-image: url('images/cosmos.jpeg');
 }
 
 
@@ -165,7 +166,7 @@ div#contact-div {
 /* fontawesome customization */
 span#iconlist{
 	color: white;
-	display: inline;
+	margin: auto;
 }
 .fa, .far, .fab, .ai {
 	color: white;
