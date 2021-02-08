@@ -39,6 +39,7 @@ h2 {
 }
 
 p {
+	font-size: 18px;
 	text-align: left;
         font-family: 'Hind', sans-serif;
         color: black;
@@ -51,12 +52,19 @@ p.white-text {
 	color: white;
 }
 
+mark {
+	background-color: var(--gry);
+}
+
 a {
-	color: white;
+	font-size: 18px;
+        text-align: left;
+        font-family: 'Hind', sans-serif;
+        color: black;
 	text-decoration: none;
 }
 a:hover {
-	color: var(--gry);
+	color: var(--drkblue);
 }
 
 
@@ -133,6 +141,14 @@ div.rightside {
 
 
 
+/* For about and CV sections */
+div.subright {
+	padding: 100px;
+}
+
+
+
+
 /* Research interests divs */
 div.researchinterest {
 	height: 33.3333334%;
@@ -161,6 +177,14 @@ div.researchinterest:hover {
 
 div#contact-div {
 	margin: auto;	
+}
+
+#contact a {
+        color: white;
+        text-decoration: none;
+}
+#contact a:hover {
+        color: var(--gry);
 }
 
 /* fontawesome customization */
