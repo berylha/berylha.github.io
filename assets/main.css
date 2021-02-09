@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Megrim|Space+Mono|Hind|Yanone+Kaffeesatz);
+@import url(https://fonts.googleapis.com/css?family=Megrim|Yanone+Kaffeesatz|Yanone+Kaffeesatz:wght@300|Hind);
 /* https://coolors.co/fbfbff-020300-24397f-6666a3-0fa3b1 */
 /* https://coolors.co/fbfbff-e7e9f6-020300-00005e-972164-6666a3-0fa3b1 */
 
@@ -15,7 +15,7 @@
 }
 
 body {
-	background-color: red;
+	background-color: white;
 	color: var(--txt);
 	margin: 0;
 }
@@ -47,12 +47,23 @@ p {
 }
 
 p.white-text {
+	font-size: 18px;
 	text-align: center;
 	font-family: 'Hind', sans-serif;
 	color: white;
 }
 
+ul {
+	margin-top: 0px;
+	margin-bottom: 12px;
+	font-size: 18px;
+	text-align: left;
+	font-family: 'Hind', sans-serif;
+	color: black;
+}
+
 mark {
+	color: inherit;
 	background-color: var(--gry);
 }
 
@@ -62,9 +73,11 @@ a {
         font-family: 'Hind', sans-serif;
         color: black;
 	text-decoration: none;
+	transition: 0.4s;
 }
 a:hover {
-	color: var(--drkblue);
+	color: var(--gry);
+	transition: 0.4s;
 }
 
 
@@ -175,16 +188,41 @@ div.researchinterest:hover {
 
 
 
+/* CV button */
+a.button {
+	background-color: white;
+  	border: 2px solid var(--gry);
+	border-radius: 4px;
+  	color: black;
+  	padding: 15px 32px;
+  	font-family: 'Hind', sans-serif;
+	text-align: center;
+  	text-decoration: none;
+  	display: inline-block;
+  	font-size: 18px;
+	transition: 0.4s;
+}
+a.button:hover {
+	background-color: var(--gry);
+	transition: 0.4s;
+}
+
+
+
 div#contact-div {
 	margin: auto;	
+	display: flex;
+	flex-direction: column;
 }
 
 #contact a {
         color: white;
         text-decoration: none;
+	transition: 0.4s;
 }
 #contact a:hover {
-        color: var(--gry);
+	opacity: 70%;
+	transition: 0.4s;
 }
 
 /* fontawesome customization */
@@ -198,8 +236,45 @@ span#iconlist{
 	padding: 16px 8px;
 	text-align: center;
 	text-decoration: none;
+	transition: 0.4s;
 }
 .fa:hover, .far:hover, .fab:hover, .ai:hover {
-	opacity: 0.7;
+	opacity: 70%;
+	transition: 0.4s;
 }
 
+
+
+
+/* CV content box */
+div.contentbox {
+	max-width: 1024px;
+	margin: auto;
+	margin-top: 32px;
+	margin-bottom: 32px;
+	padding: 32px;
+	background-color: var(--gry);
+}
+div.contentbox h1 {
+	color: black;
+	font-size: 32px;
+	margin-top: 12px;
+	margin-bottom: 8px;
+}
+div.contentbox h2 {
+	color: black;
+	font-size: 24px;
+	text-align: left;
+	margin-bottom: 8px;
+}
+div.contentbox p {
+	margin-bottom: 6px;
+}
+div.contentbox a {
+	transition: 0.4s;
+}
+div.contentbox a:hover {
+	color: black;
+	opacity: 50%;
+	transition: 0.4s;
+}
