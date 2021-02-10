@@ -18,7 +18,7 @@ body {
 	margin: 0;
 }
 
-body#researchbody {
+body#graybody {
 	background-color: var(--gry);
 }
 
@@ -288,16 +288,15 @@ span#iconlist{
 
 
 /* Page content box */
-div.contentbox {
+div.contentbox-container {
 	max-width: 1024px;
+	width: 100%;
 	margin: auto;
-	margin-top: 32px;
-	margin-bottom: 32px;
-	padding: 32px;
-	background-color: var(--gry);
 }
-div.contentbox#researchcontent {
-        background-color: white;
+div.contentbox {
+	margin: 32px;
+	padding: 32px;
+	background-color: white;
 }
 div.contentbox h1 {
 	color: black;
