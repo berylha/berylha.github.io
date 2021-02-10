@@ -3,8 +3,6 @@
 /* https://coolors.co/fbfbff-e7e9f6-020300-00005e-972164-6666a3-0fa3b1 */
 
 :root {
-	--txt: #020300;
-	--bkgrd: #FBFBFF;
 	--drkblue: #41099E;
 	--lgtblue: #763EE9;
 	/*--main: #00005E;*/
@@ -16,8 +14,12 @@
 
 body {
 	background-color: white;
-	color: var(--txt);
+	color: black;
 	margin: 0;
+}
+
+body#researchbody {
+	background-color: var(--gry);
 }
 
 h1 {
@@ -51,6 +53,25 @@ p.white-text {
 	text-align: center;
 	font-family: 'Hind', sans-serif;
 	color: white;
+}
+
+figure {
+	display: inline-block;
+	margin: 32px;
+}
+
+figure img {
+	vertical-align: top;
+}
+
+figcaption {
+        font-size: 16px;
+        text-align: left;
+        font-family: 'Hind', sans-serif;
+	font-style: italic;
+	color: black;
+        margin: 0;
+	margin-top: 8px;
 }
 
 ul {
@@ -144,7 +165,7 @@ div.rightside {
 }
 
 #cvleft {
-	background-color: var(--drkblue);
+	background-color: var(--lgtblue);
 }
 
 #cvright {
@@ -188,7 +209,7 @@ div.researchinterest:hover {
 
 
 
-/* CV button */
+/* buttons */
 a.button {
 	background-color: white;
   	border: 2px solid var(--gry);
@@ -205,6 +226,23 @@ a.button {
 a.button:hover {
 	background-color: var(--gry);
 	transition: 0.4s;
+}
+a.button-inverse {
+        background-color: var(--gry);
+        border: 2px solid white;
+        border-radius: 4px;
+        color: black;
+        padding: 15px 32px;
+        font-family: 'Hind', sans-serif;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 18px;
+        transition: 0.4s;
+}
+a.button-inverse:hover {
+        background-color: white;
+        transition: 0.4s;
 }
 
 
@@ -238,6 +276,9 @@ span#iconlist{
 	text-decoration: none;
 	transition: 0.4s;
 }
+.ai {
+	font-size: 34px;
+}
 .fa:hover, .far:hover, .fab:hover, .ai:hover {
 	opacity: 70%;
 	transition: 0.4s;
@@ -246,7 +287,7 @@ span#iconlist{
 
 
 
-/* CV content box */
+/* Page content box */
 div.contentbox {
 	max-width: 1024px;
 	margin: auto;
@@ -254,6 +295,9 @@ div.contentbox {
 	margin-bottom: 32px;
 	padding: 32px;
 	background-color: var(--gry);
+}
+div.contentbox#researchcontent {
+        background-color: white;
 }
 div.contentbox h1 {
 	color: black;
@@ -277,4 +321,26 @@ div.contentbox a:hover {
 	color: black;
 	opacity: 50%;
 	transition: 0.4s;
+}
+
+
+
+/* Research page */
+#sun-top {
+        display: flex;
+        background-image: url('images/aia335.jpeg');
+	background-size: cover;
+        background-position: center;
+}
+#binary-top {
+        display: flex;
+        background-image: url('images/binary.jpg');
+        background-size: cover;
+        background-position: center;
+}
+#galaxy-top {
+        display: flex;
+        background-image: url('images/cosmos.jpeg');
+        background-size: cover;
+        background-position: center;
 }
