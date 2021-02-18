@@ -2,6 +2,12 @@
 /* https://coolors.co/fbfbff-020300-24397f-6666a3-0fa3b1 */
 /* https://coolors.co/fbfbff-e7e9f6-020300-00005e-972164-6666a3-0fa3b1 */
 
+
+
+
+
+
+/* DEFINE BASE COLORS AS VARIABLES */
 :root {
 	--drkblue: #41099E;
 	--lgtblue: #763EE9;
@@ -12,6 +18,12 @@
 	--accnt2: #0FA3B1;
 }
 
+
+
+
+
+
+/* BASIC ELEMENT DEFINITIONS */
 body {
 	background-color: white;
 	color: black;
@@ -55,6 +67,8 @@ p.white-text {
 	color: white;
 }
 
+
+/* FIGURES */
 figure {
 	display: inline-block;
 	margin: 32px;
@@ -74,6 +88,7 @@ figcaption {
 	margin-top: 8px;
 }
 
+/* LISTS */
 ul {
 	margin-top: 0px;
 	margin-bottom: 12px;
@@ -96,14 +111,15 @@ a {
 	text-decoration: none;
 	transition: 0.4s;
 }
-a:hover {
-	color: var(--gry);
-	transition: 0.4s;
-}
 
 
 
-/* Vertical main page sections */
+
+
+
+
+
+/* VERTICAL MAIN PAGE SECTIONS FOR INDEX PAGE */
 
 section.page-section {
 	height: 100vh;
@@ -111,29 +127,55 @@ section.page-section {
 	margin: 0;
 }
 
-#intro {
-	display: flex;
-	background-color: var(--drkblue);
-}
-
 #about {
 }
 
 #research {
-	background-color: var(--lgtblue);
 }
 
 #cv {
 }
 
 #contact {
+	background-image: url('images/starfield.png');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+	background-size: cover;
+        background-position: center;
 	display: flex;
-	background-color: var(--drkblue);
 }
 
 
 
-/* Horizontal divs - split page in half */
+
+
+
+
+/* INTRO SECTION ON INDEX PAGE */
+section#intro {
+	height: 100vh;
+	background-image: url('images/starfield.png');
+	background-attachment: fixed;
+	background-size: cover;
+        background-position: center;
+	display: flex;
+}
+div#introtext {
+	margin: auto;
+}
+.fixed {
+	position: fixed;
+	text-align: center;
+	width: 100%;
+	top: 45vh;
+}
+
+
+
+
+
+
+/* INDEX PAGE HORIZONTAL DIVS - SPLIT HAPGE IN HALF */
 div.leftside {
 	width: 50%;
 	height: 100%;
@@ -150,10 +192,7 @@ div.rightside {
 }
 
 #aboutleft {
-	background-image: url('images/aia335.jpeg');
-	background-attachment: fixed;
-	background-size: 102vh;
-	background-repeat: no-repeat;
+	background-color: #3d3560;
 }
 
 #aboutright {
@@ -161,21 +200,29 @@ div.rightside {
 }
 
 #researchleft {
-	background-color: var(--gry);
+	background-color: #0e0f3b;
 }
 
 #cvleft {
-	background-color: var(--lgtblue);
+	background-color: #3d3560;
 }
 
 #cvright {
 	background-color: white;
 }
+#cvright a:hover {
+	opacity: 50%;
+	transition: 0.4s;
+}
 
 
 
 
-/* For about and CV sections */
+
+
+
+
+/* SUB-DIV FOR ABOUT AND CV SECTIONS */
 div.subright {
 	padding: 100px;
 }
@@ -183,14 +230,19 @@ div.subright {
 
 
 
-/* Research interests divs */
+
+
+
+
+/* SPLIT RESEARCH SECTION INTO 3 DIVS FOR RESEARCH PROJECTS */
+
 div.researchinterest {
 	height: 33.3333334%;
 	background-size: 100%;
 	background-position: center;
 	display: flex;
 	filter: brightness(50%);
-        transition: 0.4s;
+	transition: 0.4s;
 }
 div.researchinterest:hover {
 	filter: brightness(100%);
@@ -209,18 +261,23 @@ div.researchinterest:hover {
 
 
 
-/* buttons */
+
+
+
+
+
+/* BUTTONS */
 a.button {
 	background-color: white;
-  	border: 2px solid var(--gry);
+	border: 2px solid var(--gry);
 	border-radius: 4px;
-  	color: black;
-  	padding: 15px 32px;
-  	font-family: 'Hind', sans-serif;
+	color: black;
+	padding: 15px 32px;
+	font-family: 'Hind', sans-serif;
 	text-align: center;
-  	text-decoration: none;
-  	display: inline-block;
-  	font-size: 18px;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
 	transition: 0.4s;
 }
 a.button:hover {
@@ -228,25 +285,30 @@ a.button:hover {
 	transition: 0.4s;
 }
 a.button-inverse {
-        background-color: var(--gry);
-        border: 2px solid white;
-        border-radius: 4px;
-        color: black;
-        padding: 15px 32px;
-        font-family: 'Hind', sans-serif;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 18px;
-        transition: 0.4s;
+	background-color: var(--gry);
+	border: 2px solid white;
+	border-radius: 4px;
+	color: black;
+	padding: 15px 32px;
+	font-family: 'Hind', sans-serif;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 18px;
+	transition: 0.4s;
 }
 a.button-inverse:hover {
-        background-color: white;
-        transition: 0.4s;
+	background-color: white;
+	transition: 0.4s;
 }
 
 
 
+
+
+
+
+/* CONTACT ME SECTION AT BOTTOM OF INDEX PAGE */
 div#contact-div {
 	margin: auto;	
 	display: flex;
@@ -254,8 +316,8 @@ div#contact-div {
 }
 
 #contact a {
-        color: white;
-        text-decoration: none;
+	color: white;
+	text-decoration: none;
 	transition: 0.4s;
 }
 #contact a:hover {
@@ -263,7 +325,8 @@ div#contact-div {
 	transition: 0.4s;
 }
 
-/* fontawesome customization */
+
+/* CONTACT LINKS FONTAWESOME CUSTOMIZATION */
 span#iconlist{
 	color: white;
 	margin: auto;
@@ -287,7 +350,11 @@ span#iconlist{
 
 
 
-/* Page content box */
+
+
+
+
+/* CONTENT BOX FOR CV, RESEARCH PAGES */
 div.contentbox-container {
 	max-width: 1024px;
 	width: 100%;
@@ -324,22 +391,29 @@ div.contentbox a:hover {
 
 
 
-/* Research page */
+
+
+
+
+/* HEADERS FOR RESEARCH PAGES */
 #sun-top {
-        display: flex;
-        background-image: url('images/aia335.jpeg');
+	display: flex;
+	background-image: url('images/aia335.jpeg');
 	background-size: cover;
-        background-position: center;
+	background-position: center;
+        background-attachment: fixed;
 }
 #binary-top {
-        display: flex;
-        background-image: url('images/binary.jpg');
-        background-size: cover;
-        background-position: center;
+	display: flex;
+	background-image: url('images/binary.jpg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 }
 #galaxy-top {
-        display: flex;
-        background-image: url('images/cosmos.jpeg');
-        background-size: cover;
-        background-position: center;
+	display: flex;
+	background-image: url('images/cosmos.jpeg');
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 }
