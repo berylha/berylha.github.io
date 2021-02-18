@@ -236,19 +236,6 @@ div.subright {
 
 /* SPLIT RESEARCH SECTION INTO 3 DIVS FOR RESEARCH PROJECTS */
 
-div.researchinterest {
-	height: 33.3333334%;
-	background-size: 100%;
-	background-position: center;
-	display: flex;
-	filter: brightness(50%);
-	transition: 0.4s;
-}
-div.researchinterest:hover {
-	filter: brightness(100%);
-	background-size: 104%;
-	transition: 0.4s;
-}
 #ri-sun {
 	background-image: url('images/aia335.jpeg');
 }
@@ -257,6 +244,31 @@ div.researchinterest:hover {
 }
 #ri-galaxy {
 	background-image: url('images/cosmos.jpeg');
+}
+
+.ri-wrapper {
+	height: 33.3333334%;
+	width: 100%;
+	position: relative;
+}
+.ri-background {
+	background-size: 100%;
+        background-position: center;
+        filter: brightness(50%);
+        transition: 0.4s;
+	width: 100%;
+	height: 100%;
+}
+.ri-background:hover {
+	filter: brightness(100%);
+        background-size: 104%;
+        transition: 0.4s;
+}
+.ri-foreground {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
 
@@ -401,7 +413,7 @@ div.contentbox a:hover {
 	background-image: url('images/aia335.jpeg');
 	background-size: cover;
 	background-position: center;
-        background-attachment: fixed;
+	background-attachment: fixed;
 }
 #binary-top {
 	display: flex;
