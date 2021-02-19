@@ -1,7 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Megrim|Yanone+Kaffeesatz|Yanone+Kaffeesatz:wght@300|Hind);
-/* https://coolors.co/fbfbff-020300-24397f-6666a3-0fa3b1 */
-/* https://coolors.co/fbfbff-e7e9f6-020300-00005e-972164-6666a3-0fa3b1 */
-
+/* COLOR SCHEME: https://coolors.co/0e0f3b-e7e9f6-ffffff-d81159-ef7b45 */
 
 
 
@@ -9,13 +7,10 @@
 
 /* DEFINE BASE COLORS AS VARIABLES */
 :root {
-	--drkblue: #41099E;
-	--lgtblue: #763EE9;
-	/*--main: #00005E;*/
-	--secondary: #6666A3;
-	--gry: #E7E9F6;
-	--accnt1: #972164;
-	--accnt2: #0FA3B1;
+	--hdr: #0e0f3b;
+	--gry: #e7e9f6;
+	--pnk: #d81159;
+	--org: #ef7b45;
 }
 
 
@@ -192,7 +187,7 @@ div.rightside {
 }
 
 #aboutleft {
-	background-color: #274da1;
+	background-color: var(--pnk);
 }
 
 #aboutright {
@@ -200,11 +195,11 @@ div.rightside {
 }
 
 #researchleft {
-	background-color: #1d9ad8;
+	background-color: var(--gry);
 }
 
 #cvleft {
-	background-color: #4e3e99;
+	background-color: var(--org);
 }
 
 #cvright {
@@ -259,8 +254,8 @@ div.subright {
 	width: 100%;
 	height: 100%;
 }
-.ri-background:hover {
-	filter: brightness(100%);
+.ri-wrapper:hover div.ri-background {
+        filter: brightness(100%);
         background-size: 104%;
         transition: 0.4s;
 }
