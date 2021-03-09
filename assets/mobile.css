@@ -33,7 +33,7 @@ h1 {
 	text-align: center;
 	font-family: 'Megrim', sans-serif;
 	text-transform: uppercase;
-	font-size: 54px;
+	font-size: 48px;
 	color: white;
 	margin: auto;
 	padding: 12px;
@@ -42,13 +42,13 @@ h1 {
 h2 {
 	text-align: center;
 	font-family: 'Yanone Kaffeesatz', sans-serif;
-	font-size: 32px;
+	font-size: 28px;
 	color: white;
 	margin: auto;
 }
 
 p {
-	font-size: 18px;
+	font-size: 16px;
 	text-align: left;
         font-family: 'Hind', sans-serif;
         color: black;
@@ -56,7 +56,7 @@ p {
 }
 
 p.white-text {
-	font-size: 18px;
+	font-size: 16px;
 	text-align: center;
 	font-family: 'Hind', sans-serif;
 	color: white;
@@ -66,7 +66,8 @@ p.white-text {
 /* FIGURES */
 figure {
 	display: inline-block;
-	margin: 32px;
+	margin: 32px 0px !important;
+	width: 100% !important;
 }
 
 figure img {
@@ -74,7 +75,7 @@ figure img {
 }
 
 figcaption {
-        font-size: 16px;
+        font-size: 14px;
         text-align: left;
         font-family: 'Hind', sans-serif;
 	font-style: italic;
@@ -87,7 +88,7 @@ figcaption {
 ul {
 	margin-top: 0px;
 	margin-bottom: 12px;
-	font-size: 18px;
+	font-size: 16px;
 	text-align: left;
 	font-family: 'Hind', sans-serif;
 	color: black;
@@ -99,7 +100,7 @@ mark {
 }
 
 a {
-	font-size: 18px;
+	font-size: 16px;
         text-align: left;
         font-family: 'Hind', sans-serif;
         color: black;
@@ -114,7 +115,7 @@ a {
 /* VERTICAL MAIN PAGE SECTIONS FOR INDEX PAGE */
 
 section.page-section {
-	height: 100vh;
+	height: 200vh;
 	width: 100%;
 	margin: 0;
 }
@@ -135,6 +136,7 @@ section.page-section {
 	background-size: cover;
         background-position: center;
 	display: flex;
+	height: 100vh;
 }
 
 
@@ -169,18 +171,16 @@ div#introtext {
 
 /* INDEX PAGE HORIZONTAL DIVS - SPLIT HAPGE IN HALF */
 div.leftside {
-	width: 50%;
+	width: 100%;
 	height: 100vh;
-	position: absolute;
-	left: 0px;
 	display: flex;
+	top: 0px;
 }
 
 div.rightside {
-	width: 50%;
+	width: 100%;
 	height: 100vh;
-	position: absolute;
-	right: 0px;
+	top: 100vh;
 }
 
 
@@ -192,10 +192,10 @@ div.rightside {
 	background-color: white;
 }
 #aboutright img {
-	width: 198px;
-	float: left;
-	margin-right: 32px;
-	margin-bottom: 32px;
+        width: 50%;
+        float: left;
+        margin-right: 20px;
+        margin-bottom: 20px;
 }
 
 #researchleft {
@@ -223,7 +223,7 @@ div.rightside {
 
 /* SUB-DIV FOR ABOUT AND CV SECTIONS */
 div.subright {
-	padding: 64px;
+	padding: 32px;
 }
 
 
@@ -251,7 +251,7 @@ div.subright {
 	position: relative;
 }
 .ri-background {
-	background-size: 100%;
+	background-size: cover;
         background-position: center;
         filter: brightness(50%);
         transition: 0.4s;
@@ -260,8 +260,8 @@ div.subright {
 }
 .ri-wrapper:hover div.ri-background {
         filter: brightness(100%);
-        background-size: 104%;
-        transition: 0.4s;
+        background-size: cover;
+	transition: 0.4s;
 }
 .ri-foreground {
 	position: absolute;
@@ -288,7 +288,7 @@ a.button {
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 18px;
+	font-size: 16px;
 	transition: 0.4s;
 }
 a.button:hover {
@@ -305,7 +305,7 @@ a.button-inverse {
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
-	font-size: 18px;
+	font-size: 16px;
 	transition: 0.4s;
 }
 a.button-inverse:hover {
@@ -408,6 +408,7 @@ div.contentbox a:hover {
 
 /* HEADERS FOR RESEARCH PAGES */
 #sun-top {
+	height: 100vh;
 	display: flex;
 	background-image: url('images/aia335.jpeg');
 	background-size: cover;
@@ -415,6 +416,7 @@ div.contentbox a:hover {
 	background-attachment: fixed;
 }
 #binary-top {
+	height: 100vh;
 	display: flex;
 	background-image: url('images/binary.jpg');
 	background-size: cover;
@@ -422,6 +424,7 @@ div.contentbox a:hover {
 	background-attachment: fixed;
 }
 #galaxy-top {
+	height: 100vh;
 	display: flex;
 	background-image: url('images/cosmos.jpeg');
 	background-size: cover;
