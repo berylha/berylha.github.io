@@ -23,8 +23,32 @@
 				<div class='contentbox', id='researchcontent'>
 					<h2>Identifying and Repairing Catastrophic Errors in Galaxy Properties Using Dimensionality Reduction</h2>
 					<p><i>Research conducted with Dr. Charles Steinhardt at the Cosmic Dawn Center, Niels Bohr Institute in Copenhagen, Denmark.</i></p>
-					<p>DESCRIPTION COMING SOON</p>
-					<p><i>Header image: NASA/ESA/Hubble(STScI)</i></p>	
+                    <div style='text-align:center;'>
+					    <a class='button' href='https://ui.adsabs.harvard.edu/abs/2021ApJ...908..148H/abstract' style='margin: 12px;'>ApJ Paper</a>
+					    <a class='button' href='assets/posters/Poster_AAS235.pdf' style='margin: 12px;'>AAS Poster</a>
+                    </div>
+                    <p>Modern surveys are able to observe large numbers of galaxies because they use photometry, observing a few bands for each galaxy, rather than the more time-consuming spectroscopy, observing the galaxy's entire spectrum.</p>
+                    <p>Typically, a template fitting code is used to determine each galaxy's properties from its photometry. However, for a few percent of galaxies in every survey, the derived properties can be catastrophically wrong (Figure 1), such as labeling relatively nearby galaxies as some of the farthest in the universe. Because there is no way to know which galaxies have these catastrophic errors in their derived properties, the errors contaminate all studies of galaxy properties based on photometric surveys.</p>
+					<figure class='center' style='max-width: 720px;'>
+						<img src='assets/images/EAZY_comparison.png' style='width: 100%'>
+						<figcaption><b>Figure 1.</b> Comparison of photometric redshift with spectroscopic redshift for a sample of 22,978 objects from the COSMOS survey. 99.5% of objects (black) fall on or near the x=y line, while the other 0.5% of objects (red) have catastrophic errors in their photometric redshift. Below this comparison is a distribution of error around the x=y line. The three histograms show the relative distribution of objects in the sample within each redshift bin.</figcaption>
+					</figure>
+                    <p>To determine which galaxies have these catastrophic errors, we develop an augmented algorithm as follows:</p>
+                    <ol type='1'>
+                        <li><p>Run a template fitting code, EAZY, to determine a photometric redshift for each galaxy.</p></li>
+                        <li><p>Use the dimensionality reduction algorithm t-SNE to group objects with similar photometry. Color the t-SNE map by photometric redshift (Figure 2).</p></li>
+                        <li><p>Galaxies with similar photometry should have similar redshift, so any object which has a very different photometric redshift than its nearest neighbors on the t-SNE map gets flagged as a potential catastrophic error.</p></li>
+                    </ol>
+					<figure style='max-width: 960px;'>
+						<img src='assets/images/tsne_seds.png' style='width: 100%'>
+						<figcaption><b>Figure 2.</b> t-SNE output map colored by photmetric redshift. For a handful of objects in each of three distinct regions in the t-SNE map, the spectral energy distribution (SED) shape is shown in the boxes at left. Objects grouped close together on the t-SNE map, which are in the same box at left, have similar SED shapes. By contrast, the SED shapes are different between these three distinct regions of the t-SNE map.</figcaption>
+					</figure>
+                    <p>An ROC curve demonstrating the effectiveness of this method is shown in Figure 3. The curve lies far above the diagonal dashed line, meaning that the True Positive Rate (TPR) is much higher than the False Positive Rate (FPR), and the method consistently correctly identifies errors at a much higher rate than it misidentifies correct objects as errors.</p>
+					<figure class='center' style='max-width: 460px;'>
+						<img src='assets/images/ROC_perplexity.png' style='width: 100%'>
+						<figcaption><b>Figure 3.</b> Receiver operating characteristic (ROC) curves for method of flagging an object if its photometric redshift differs from the mean of its neighbors by at least some threshold. For each threshold, we plot the true positive rate at which we correctly flag catastrophic errors against the false positive rate at which we identify correct objects as errors.</figcaption>
+					</figure>
+                    <p><i>Header image: NASA/ESA/Hubble(STScI)</i></p>	
 				</div>
 			</div>
 
