@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Megrim|Yanone+Kaffeesatz|Yanone+Kaffeesatz:wght@300|Hind);
+@import url(https://fonts.googleapis.com/css?family=Megrim|Gill+Sans);
 /* COLOR SCHEME: https://coolors.co/0e0f3b-e7e9f6-ffffff-d81159-ef7b45 */
 
 
@@ -33,7 +33,7 @@ h1 {
 	text-align: center;
 	font-family: 'Megrim', sans-serif;
 	text-transform: uppercase;
-	font-size: 54px;
+	font-size: 60px;
 	color: white;
 	margin: auto;
 	padding: 12px;
@@ -41,8 +41,8 @@ h1 {
 
 h2 {
 	text-align: center;
-	font-family: 'Yanone Kaffeesatz', sans-serif;
-	font-size: 32px;
+	font-family: 'Gill Sans', sans-serif;
+	font-size: 26px;
 	color: white;
 	margin: auto;
 }
@@ -50,7 +50,7 @@ h2 {
 p {
 	font-size: 18px;
 	text-align: left;
-        font-family: 'Hind', sans-serif;
+        font-family: 'Gill Sans', sans-serif;
         color: black;
 	margin: 0;
 }
@@ -58,7 +58,7 @@ p {
 p.white-text {
 	font-size: 18px;
 	text-align: center;
-	font-family: 'Hind', sans-serif;
+	font-family: 'Gill Sans', sans-serif;
 	color: white;
 }
 
@@ -82,7 +82,7 @@ figure img {
 figcaption {
         font-size: 16px;
         text-align: left;
-        font-family: 'Hind', sans-serif;
+        font-family: 'Gill Sans', sans-serif;
 	font-style: italic;
 	color: black;
         margin: 0;
@@ -95,7 +95,7 @@ ul {
 	margin-bottom: 12px;
 	font-size: 18px;
 	text-align: left;
-	font-family: 'Hind', sans-serif;
+	font-family: 'Gill Sans', sans-serif;
 	color: black;
 }
 
@@ -107,7 +107,7 @@ mark {
 a {
 	font-size: 18px;
         text-align: left;
-        font-family: 'Hind', sans-serif;
+        font-family: 'Gill Sans', sans-serif;
         color: black;
 	transition: 0.4s;
 }
@@ -289,7 +289,7 @@ a.button {
 	border-radius: 4px;
 	color: black;
 	padding: 15px 32px;
-	font-family: 'Hind', sans-serif;
+	font-family: 'Gill Sans', sans-serif;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
@@ -306,7 +306,7 @@ a.button-inverse {
 	border-radius: 4px;
 	color: black;
 	padding: 15px 32px;
-	font-family: 'Hind', sans-serif;
+	font-family: 'Gill Sans', sans-serif;
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;
