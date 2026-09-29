@@ -1,0 +1,775 @@
+/*
+  Based on the Vanilla template by TemplateMo
+  https://templatemo.com/tm-526-vanilla
+*/
+
+:root {
+  --accent: #ff7d27;
+  --accent-light: #ff8e43;
+  --link: #3cc;
+  --panel: rgba(0, 0, 0, 0.55);
+  --footer: #282b2f;
+  --text: #fff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text);
+  background: #111;
+  overflow-x: hidden;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: var(--link);
+}
+
+a:hover,
+a:focus {
+  color: #ff0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: 1.2;
+  margin: 0;
+}
+
+em.accent,
+.hero em,
+.paper-authors em {
+  color: var(--accent);
+  font-weight: 600;
+  font-style: normal;
+}
+
+.container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.line-dec {
+  width: 45px;
+  height: 3px;
+  background-color: var(--accent);
+  margin: 18px auto;
+}
+
+.primary-button {
+  display: inline-block;
+  background-color: var(--accent);
+  padding: 14px 24px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  font-size: 11px;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+
+.primary-button:hover,
+.primary-button:focus {
+  color: #fff;
+  background-color: var(--accent-light);
+}
+
+/* Full-height photo sections. Fixed backgrounds give the parallax feel on
+   desktop; they are switched off on touch devices, where they misbehave. */
+.photo-section {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  padding: 12vh 0 8vh;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+/*----------
+  NAV
+----------*/
+
+.site-nav {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 100;
+  padding: 30px 0;
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+.site-nav a {
+  position: relative;
+  display: block;
+  min-height: 32px;
+  padding: 5px 45px 5px 25px;
+  color: #fff;
+  text-decoration: none;
+}
+
+/* The dot */
+.site-nav a::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  margin-top: -5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 10px;
+  background: rgba(250, 250, 250, 0.75);
+  transition: transform 0.3s;
+  transform: scale(0.6);
+}
+
+/* Ring around the dot for the current section */
+.site-nav a.active::after {
+  transform: scale(0.9);
+}
+
+.site-nav a.active::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 17px;
+  margin-top: -8px;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+}
+
+.site-nav span {
+  display: none;
+}
+
+.site-nav:hover span,
+.site-nav a:focus span {
+  display: block;
+  color: rgba(0, 0, 0, 0.6);
+  background-color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 12px;
+  padding: 2px 12px;
+  border-radius: 15px;
+}
+
+.site-nav a:hover span {
+  color: #000;
+}
+
+/*----------
+  HERO
+----------*/
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url(../img/mw.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  padding: 0 16px;
+}
+
+.hero h1 {
+  font-size: 72px;
+  font-weight: 600;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+.hero .subtitle {
+  display: block;
+  font-weight: 300;
+  font-size: 48px;
+}
+
+/*----------
+  ABOUT
+----------*/
+
+.about {
+  /* Slight darkening keeps white text readable over the bright sky */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url(../img/palomar.jpg);
+}
+
+.bio {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.bio img {
+  width: 60%;
+  max-width: 240px;
+  margin: 0 auto 20px;
+}
+
+.bio h2 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.bio .line-dec {
+  margin-left: 0;
+}
+
+.bio .primary-button {
+  margin: 12px 0 0;
+}
+
+.interests {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.interest {
+  background-color: var(--panel);
+  padding: 25px 30px;
+  text-align: center;
+}
+
+.interest h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.interest p {
+  margin: 0;
+}
+
+/*----------
+  NEWS
+----------*/
+
+.news {
+  background: #1b1d21;
+  padding: 80px 0;
+}
+
+.news-list {
+  list-style: none;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.news-list li {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.news-list li:last-child {
+  border-bottom: 0;
+}
+
+.news-list time {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding-top: 2px;
+}
+
+.news-list p {
+  margin: 0;
+}
+
+/* Items past the first few are hidden until "Show older news" is pressed */
+.news-list.collapsed li.older {
+  display: none;
+}
+
+.news-more {
+  display: block;
+  margin: 24px auto 0;
+  border: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/*----------
+  RESEARCH
+----------*/
+
+.research {
+  background-image: url(../img/palomar_night.jpg);
+  padding-top: 8vh;
+}
+
+.research .container {
+  max-width: 1070px;
+  text-align: center;
+}
+
+.research .section-title {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.project-thumb {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.project-thumb:hover,
+.project-thumb:focus-visible {
+  opacity: 0.7;
+}
+
+.project-thumb img,
+.project-thumb video {
+  width: 100%;
+}
+
+.project-caption {
+  background-color: var(--panel);
+  padding: 25px;
+  margin: 20px 0 0;
+}
+
+.tabs {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tabs button {
+  display: block;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: #fff;
+  background: transparent;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 15px;
+  border: 4px solid #fff;
+  cursor: pointer;
+}
+
+.tabs button:hover {
+  color: var(--accent);
+}
+
+.tabs button[aria-selected="true"] {
+  border-color: var(--accent);
+}
+
+/*----------
+  PAPER POP-UPS
+----------*/
+
+.paper-dialog {
+  width: 80%;
+  max-width: 1100px;
+  max-height: 90vh;
+  padding: 0;
+  border: 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.paper-dialog[open] {
+  animation: dialog-in 0.3s;
+}
+
+.paper-dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dialog-body {
+  padding: 25px 100px 30px;
+}
+
+.paper-dialog h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 10px 0 20px;
+}
+
+.paper-dialog ol {
+  margin: 0 0 1em;
+}
+
+.paper-dialog .primary-button {
+  margin-top: 10px;
+}
+
+/* Sticks to the top corner while scrolling; the negative margin stops it
+   taking up its own row above the image */
+.dialog-close {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: block;
+  margin: 0 0 -44px auto;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ccc;
+  font-size: 32px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.dialog-close:hover,
+.dialog-close:focus-visible {
+  color: #fff;
+}
+
+body.dialog-open {
+  overflow: hidden;
+}
+
+@keyframes dialog-in {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/*----------
+  FOOTER
+----------*/
+
+footer {
+  text-align: center;
+  background-color: var(--footer);
+  padding: 70px 0;
+}
+
+footer .primary-button {
+  margin-bottom: 30px;
+}
+
+footer p {
+  font-size: 12px;
+  margin: 15px 0 0;
+  letter-spacing: 0.5px;
+}
+
+.social {
+  list-style: none;
+  margin: 15px 0 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.social a {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent);
+  color: var(--footer);
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  font-size: 18px;
+}
+
+.social a:hover {
+  color: var(--footer);
+  background-color: var(--accent-light);
+}
+
+footer em {
+  color: var(--accent-light);
+  font-weight: 600;
+  font-style: normal;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/*----------
+  TABLET
+----------*/
+
+@media (max-width: 991px) {
+  .hero h1 {
+    font-size: 56px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bio {
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .bio .line-dec {
+    margin-left: auto;
+  }
+
+  .dialog-body {
+    padding: 20px 40px 30px;
+  }
+}
+
+/*----------
+  PHONE
+----------*/
+
+@media (max-width: 767px) {
+  body {
+    padding-top: 48px;
+  }
+
+  /* Side dots become a bar of text links along the top */
+  .site-nav {
+    top: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    padding: 0;
+    background: rgba(20, 22, 26, 0.92);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+
+  .site-nav ul {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+  }
+
+  .site-nav a {
+    min-height: 48px;
+    padding: 14px 6px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  .site-nav a::after,
+  .site-nav a.active::before {
+    display: none;
+  }
+
+  .site-nav span,
+  .site-nav:hover span,
+  .site-nav a:focus span {
+    display: inline;
+    background: none;
+    padding: 0;
+    color: inherit;
+    font-size: inherit;
+  }
+
+  .site-nav a.active {
+    color: var(--accent);
+  }
+
+  .hero {
+    min-height: calc(100vh - 48px);
+    min-height: calc(100svh - 48px);
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .hero .subtitle {
+    font-size: 22px;
+    margin-top: 8px;
+  }
+
+  .photo-section,
+  .hero {
+    background-attachment: scroll;
+  }
+
+  .photo-section {
+    min-height: 0;
+    padding: 50px 0;
+  }
+
+  [id] {
+    scroll-margin-top: 48px;
+  }
+
+  .interests {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .interest {
+    padding: 20px;
+  }
+
+  .section-title {
+    font-size: 24px;
+  }
+
+  .news {
+    padding: 50px 0;
+  }
+
+  .news-list li {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .project-caption {
+    padding: 16px;
+  }
+
+  .tabs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .tabs button {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    padding: 8px;
+    border-width: 3px;
+  }
+
+  .paper-dialog {
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    background-color: rgba(0, 0, 0, 0.94);
+  }
+
+  .dialog-body {
+    padding: 8px 16px 30px;
+  }
+
+  .paper-dialog h2 {
+    font-size: 22px;
+  }
+
+  .paper-dialog ol {
+    padding-left: 20px;
+  }
+
+  footer {
+    padding: 50px 0;
+  }
+}
+
+/* Very narrow phones: tighten the nav bar so all five links fit */
+@media (max-width: 380px) {
+  .site-nav a {
+    padding-left: 2px;
+    padding-right: 2px;
+    font-size: 11px;
+    letter-spacing: 0;
+  }
+}
+
+/* iOS ignores fixed backgrounds and scales them badly; use normal ones on touch screens */
+@media (hover: none) {
+  .photo-section,
+  .hero {
+    background-attachment: scroll;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .paper-dialog[open] {
+    animation: none;
+  }
+}

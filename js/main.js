@@ -1,132 +1,93 @@
-/* 
+(function () {
+  'use strict';
 
-Vanilla Template
+  // Highlight the nav link for the section currently on screen
+  var navLinks = document.querySelectorAll('.site-nav a');
+  var sections = [];
+  navLinks.forEach(function (link) {
+    var section = document.querySelector(link.getAttribute('href'));
+    if (section) sections.push({ link: link, section: section });
+  });
 
-https://templatemo.com/tm-526-vanilla
-
-*/
-
-jQuery(document).ready(function($) {
-
-	'use strict';
-
-    var top_header = $('.parallax-content');
-    top_header.css({'background-position':'center center'}); // better use CSS
-
-    $(window).scroll(function () {
-    var st = $(this).scrollTop();
-    top_header.css({'background-position':'center calc(50% + '+(st*.5)+'px)'});
+  function updateActiveNav() {
+    var current = sections[0];
+    var marker = window.innerHeight * 0.35;
+    sections.forEach(function (s) {
+      if (s.section.getBoundingClientRect().top <= marker) current = s;
     });
-
-
-    $('body').scrollspy({ 
-        target: '.fixed-side-navbar',
-        offset: 200
-    });
-      
-      // smoothscroll on sidenav click
-
-    $('.tabgroup > div').hide();
-        $('.tabgroup > div:first-of-type').show();
-        $('.tabs a').click(function(e){
-          e.preventDefault();
-            var $this = $(this),
-            tabgroup = '#'+$this.parents('.tabs').data('tabgroup'),
-            others = $this.closest('li').siblings().children('a'),
-            target = $this.attr('href');
-        others.removeClass('active');
-        $this.addClass('active');
-        $(tabgroup).children('div').hide();
-        $(target).show();
-      
-    })
-
-    var owl = $("#owl-testimonials");
-
-      owl.owlCarousel({
-        
-        pagination : true,
-        paginationNumbers: false,
-        autoPlay: 6000, //Set AutoPlay to 3 seconds
-        items : 3, //10 items above 1000px browser width
-        itemsDesktop : [1000,3], //5 items between 1000px and 901px
-        itemsDesktopSmall : [900,2], // betweem 900px and 601px
-        itemsTablet: [600,1], //2 items between 600 and 0
-        itemsMobile : false // itemsMobile disabled - inherit from itemsTablet option
-        
-    });
-
-
-});
-
-
-
-
-// MODAL, source: https://www.w3schools.com/howto/howto_css_modals.asp
-
-
-// // Get the modal
-// var modal = document.getElementById("myModal");
-
-// // Get the button that opens the modal
-// var btn = document.getElementById("openModal");
-
-// // Get the <span> element that closes the modal
-// var span = document.getElementsByClassName("modalClose")[0];
-
-// // When the user clicks on the button, open the modal
-// btn.onclick = function() {
-//   modal.style.display = "block";
-// }
-
-// // When the user clicks on <span> (x), close the modal
-// span.onclick = function() {
-//   modal.style.display = "none";
-// }
-
-// // When the user clicks anywhere outside of the modal, close it
-// window.onclick = function(event) {
-//   if (event.target == modal) {
-//     modal.style.display = "none";
-//   }
-// }
-
-
-
-// Get the button that opens the modal
-// var btn = document.querySelectorAll("img.modal-button");
-var btn = document.getElementsByClassName("openModal");
-
-// All page modals
-var modals = document.querySelectorAll('.modal');
-
-// Get the <span> element that closes the modal
-var spans = document.getElementsByClassName("modalClose");
-
-// When the user clicks the button, open the modal
-for (var i = 0; i < btn.length; i++) {
- btn[i].onclick = function(e) {
-    e.preventDefault();
-    modal = document.querySelector(e.target.getAttribute("href"));
-    modal.style.display = "block";
- }
-}
-
-// When the user clicks on <span> (x), close the modal
-for (var i = 0; i < spans.length; i++) {
- spans[i].onclick = function() {
-    for (var index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+    // At the very bottom, the footer counts as current even if it is short
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) {
+      current = sections[sections.length - 1];
     }
- }
-}
+    sections.forEach(function (s) {
+      s.link.classList.toggle('active', s === current);
+    });
+  }
 
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target.classList.contains('modal')) {
-     for (var index in modals) {
-      if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
-     }
+  window.addEventListener('scroll', updateActiveNav, { passive: true });
+  window.addEventListener('resize', updateActiveNav);
+  updateActiveNav();
+
+  // Research tabs
+  var tabs = document.querySelectorAll('.tabs [role="tab"]');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) {
+        var selected = t === tab;
+        t.setAttribute('aria-selected', selected);
+        var panel = document.getElementById(t.getAttribute('aria-controls'));
+        panel.hidden = !selected;
+        playVideos(panel, selected);
+      });
+    });
+  });
+
+  // Videos only load and play while they are visible, to save mobile data
+  function playVideos(container, play) {
+    container.querySelectorAll('video').forEach(function (v) {
+      if (play) v.play().catch(function () {});
+      else v.pause();
+    });
+  }
+
+  // Paper pop-ups
+  document.querySelectorAll('[data-dialog]').forEach(function (button) {
+    button.addEventListener('click', function () {
+      var dialog = document.getElementById(button.getAttribute('data-dialog'));
+      dialog.showModal();
+      playVideos(dialog, true);
+      document.body.classList.add('dialog-open');
+    });
+  });
+
+  document.querySelectorAll('.paper-dialog').forEach(function (dialog) {
+    dialog.querySelector('.dialog-close').addEventListener('click', function () {
+      dialog.close();
+    });
+    // Clicking the dark area outside the pop-up closes it
+    dialog.addEventListener('click', function (e) {
+      if (e.target === dialog) dialog.close();
+    });
+    dialog.addEventListener('close', function () {
+      document.body.classList.remove('dialog-open');
+      playVideos(dialog, false);
+    });
+  });
+
+  // News: show the newest few items, with a button to reveal the rest
+  var NEWS_SHOWN = 5;
+  var newsList = document.querySelector('.news-list');
+  var newsMore = document.querySelector('.news-more');
+  if (newsList && newsMore) {
+    var items = newsList.querySelectorAll('li');
+    if (items.length > NEWS_SHOWN) {
+      for (var i = NEWS_SHOWN; i < items.length; i++) items[i].classList.add('older');
+      newsList.classList.add('collapsed');
+      newsMore.hidden = false;
+      newsMore.addEventListener('click', function () {
+        newsList.classList.remove('collapsed');
+        newsMore.hidden = true;
+      });
     }
-}
-
+  }
+})();
